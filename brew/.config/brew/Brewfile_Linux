@@ -1,0 +1,9 @@
+brew "gcc"
+
+brew "fastfetch"
+brew "fish"
+brew "fzf"
+brew "iperf3"
+brew "mihomo"
+brew "tailscale"
+brew "tldr"

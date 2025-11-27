@@ -1,0 +1,1298 @@
+allow-lan: true
+bind-address: "*"
+# lan-allowed-ips:
+# lan-disallowed-ips:
+authentication:
+  - "chao:050530"
+skip-auth-prefixes:
+  - 127.0.0.1/8
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+  - 100.64.0.0/10
+  - ::1/128
+mode: rule
+log-level: info
+ipv6: true
+mixed-port: 6152
+find-process-mode: strict
+external-controller: '0.0.0.0:7890'
+# external-controller-tls: 127.0.0.1:9443
+external-controller-cors:
+  allow-origins:
+    - '*'
+  allow-private-network: true
+secret: "050530"
+profile:
+  store-selected: true
+  store-fake-ip: true
+unified-delay: true
+# interface-name: en0
+# routing-mark: 6153
+geo-auto-update: true
+geo-update-interval: 24
+global-ua: clash.meta
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  device: mihomo
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  exclude-interface:
+    - Tailscale
+    - tailscale0
+  mtu: 1500
+  route-exclude-address:
+    - 100.64.0.0/10
+    - fd7a:115c:a1e0::/48
+  strict-route: false
+dns:
+  enable: true
+  cache-algorithm: arc
+  prefer-h3: true
+  # use-hosts: true
+  # use-system-hosts: true
+  respect-rules: false
+  listen: 0.0.0.0:1053
+  ipv6: true
+  default-nameserver:
+    - 223.5.5.5
+    - 100.100.100.100
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - '*.lan'
+    - '+.argotunnel.com'
+  nameserver-policy:
+    '+.arpa': '10.0.0.1'
+    '+.taileee60e.ts.net': '100.100.100.100'
+  #   'rule-set:cn':
+  #   - https://doh.pub/dns-query
+  #   - https://dns.alidns.com/dns-query
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://doh.dns.sb/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.twnic.tw/dns-query
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+  # proxy-server-nameserver:
+  #   - https://doh.pub/dns-query
+  # direct-nameserver:
+  #   - system
+  direct-nameserver-follow-policy: false
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    nameserver-policy:
+      - gfw
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+
+proxies:
+  - {
+      name: "香港 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53401,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53402,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53403,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53404,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53405,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 06",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53406,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 07",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53407,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 08",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53408,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 09",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53409,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 10",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53410,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 11",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53411,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 12",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53412,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 13",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53413,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 14",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53414,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 15",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53415,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 16",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53416,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 17",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53417,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 18",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53418,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 19",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53419,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "香港 20",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmhk.lma1b2.com,
+      port: 53420,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53421,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53422,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53423,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53424,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53425,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 06",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53426,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 07",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53427,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 08",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53428,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 09",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53429,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "台湾 10",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 53430,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53431,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53432,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53433,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53434,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53435,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 06",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53436,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 07",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53437,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 08",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53438,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 09",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53439,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "新加坡 10",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmsg.lma1b2.com,
+      port: 53440,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53441,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53442,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53443,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53444,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53445,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 06",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53446,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 07",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53447,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 08",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53448,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 09",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53449,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "日本 10",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmjp.lma1b2.com,
+      port: 53450,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53451,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53452,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53453,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53454,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53455,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 06",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53456,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 07",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53457,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 08",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53458,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 09",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53459,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "美国 10",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmus.lma1b2.com,
+      port: 53460,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "马来西亚 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmmy.lma1b2.com,
+      port: 53466,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "马来西亚 02",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmmy.lma1b2.com,
+      port: 53467,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "马来西亚 03",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmmy.lma1b2.com,
+      port: 53468,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "马来西亚 04",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmmy.lma1b2.com,
+      port: 53469,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "马来西亚 05",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmmy.lma1b2.com,
+      port: 53470,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "土耳其 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmtr.lma1b2.com,
+      port: 53496,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "阿根廷 01",
+      type: trojan,
+      server: lmnode-ixd3fh2v5uqlv3z-lmar.lma1b2.com,
+      port: 53498,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+      skip-cert-verify: true,
+    }
+  - {
+      name: "SS-台湾 01",
+      type: ss,
+      server: lmnode-c15fb07a.ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 50021,
+      cipher: aes-128-gcm,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+    }
+  - {
+      name: "SS-台湾 02",
+      type: ss,
+      server: lmnode-c15fb07a.ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 50022,
+      cipher: aes-128-gcm,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+    }
+  - {
+      name: "SS-台湾 03",
+      type: ss,
+      server: lmnode-c15fb07a.ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 50023,
+      cipher: aes-128-gcm,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+    }
+  - {
+      name: "SS-台湾 04",
+      type: ss,
+      server: lmnode-c15fb07a.ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 50024,
+      cipher: aes-128-gcm,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+    }
+  - {
+      name: "SS-台湾 05",
+      type: ss,
+      server: lmnode-c15fb07a.ixd3fh2v5uqlv3z-lmtw.lma1b2.com,
+      port: 50025,
+      cipher: aes-128-gcm,
+      password: bf4bd8a0-05dc-478d-a71f-2da608452ba6,
+      udp: true,
+    }
+
+proxy-groups:
+  - {
+      name: "🚀 节点选择",
+      type: select,
+      proxies:
+        [
+          "♻️ 自动选择",
+          DIRECT,
+          "香港 01",
+          "香港 02",
+          "香港 03",
+          "香港 04",
+          "香港 05",
+          "香港 06",
+          "香港 07",
+          "香港 08",
+          "香港 09",
+          "香港 10",
+          "香港 11",
+          "香港 12",
+          "香港 13",
+          "香港 14",
+          "香港 15",
+          "香港 16",
+          "香港 17",
+          "香港 18",
+          "香港 19",
+          "香港 20",
+          "台湾 01",
+          "台湾 02",
+          "台湾 03",
+          "台湾 04",
+          "台湾 05",
+          "台湾 06",
+          "台湾 07",
+          "台湾 08",
+          "台湾 09",
+          "台湾 10",
+          "新加坡 01",
+          "新加坡 02",
+          "新加坡 03",
+          "新加坡 04",
+          "新加坡 05",
+          "新加坡 06",
+          "新加坡 07",
+          "新加坡 08",
+          "新加坡 09",
+          "新加坡 10",
+          "日本 01",
+          "日本 02",
+          "日本 03",
+          "日本 04",
+          "日本 05",
+          "日本 06",
+          "日本 07",
+          "日本 08",
+          "日本 09",
+          "日本 10",
+          "美国 01",
+          "美国 02",
+          "美国 03",
+          "美国 04",
+          "美国 05",
+          "美国 06",
+          "美国 07",
+          "美国 08",
+          "美国 09",
+          "美国 10",
+          "马来西亚 01",
+          "马来西亚 02",
+          "马来西亚 03",
+          "马来西亚 04",
+          "马来西亚 05",
+          "土耳其 01",
+          "阿根廷 01",
+          "SS-台湾 01",
+          "SS-台湾 02",
+          "SS-台湾 03",
+          "SS-台湾 04",
+          "SS-台湾 05",
+        ],
+    }
+  - {
+      name: "♻️ 自动选择",
+      type: url-test,
+      proxies:
+        [
+          "香港 01",
+          "香港 02",
+          "香港 03",
+          "香港 04",
+          "香港 05",
+          "香港 06",
+          "香港 07",
+          "香港 08",
+          "香港 09",
+          "香港 10",
+          "香港 11",
+          "香港 12",
+          "香港 13",
+          "香港 14",
+          "香港 15",
+          "香港 16",
+          "香港 17",
+          "香港 18",
+          "香港 19",
+          "香港 20",
+          "台湾 01",
+          "台湾 02",
+          "台湾 03",
+          "台湾 04",
+          "台湾 05",
+          "台湾 06",
+          "台湾 07",
+          "台湾 08",
+          "台湾 09",
+          "台湾 10",
+          "新加坡 01",
+          "新加坡 02",
+          "新加坡 03",
+          "新加坡 04",
+          "新加坡 05",
+          "新加坡 06",
+          "新加坡 07",
+          "新加坡 08",
+          "新加坡 09",
+          "新加坡 10",
+          "日本 01",
+          "日本 02",
+          "日本 03",
+          "日本 04",
+          "日本 05",
+          "日本 06",
+          "日本 07",
+          "日本 08",
+          "日本 09",
+          "日本 10",
+          "美国 01",
+          "美国 02",
+          "美国 03",
+          "美国 04",
+          "美国 05",
+          "美国 06",
+          "美国 07",
+          "美国 08",
+          "美国 09",
+          "美国 10",
+          "马来西亚 01",
+          "马来西亚 02",
+          "马来西亚 03",
+          "马来西亚 04",
+          "马来西亚 05",
+          "土耳其 01",
+          "阿根廷 01",
+          "SS-台湾 01",
+          "SS-台湾 02",
+          "SS-台湾 03",
+          "SS-台湾 04",
+          "SS-台湾 05",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "💬 ChatGPT",
+      type: select,
+      proxies:
+        [
+          "🚀 节点选择",
+          "🇨🇳 台湾节点",
+          "🇯🇵 日本节点",
+          "🇸🇬 加坡节点",
+          "🇺🇲 美国节点",
+          "🇲🇾 马来西亚",
+        ],
+    }
+  - {
+      name: "🍎 AppleTV",
+      type: select,
+      proxies:
+        [
+          "🚀 节点选择",
+          DIRECT,
+          "🇭🇰 香港节点",
+          "🇨🇳 台湾节点",
+          "🇯🇵 日本节点",
+          "🇸🇬 加坡节点",
+          "🇺🇲 美国节点",
+          "🇲🇾 马来西亚",
+        ],
+    }
+  - {
+      name: "🎮 游戏平台",
+      type: select,
+      proxies:
+        [
+          "🚀 节点选择",
+          DIRECT,
+          "🇭🇰 香港节点",
+          "🇨🇳 台湾节点",
+          "🇯🇵 日本节点",
+          "🇸🇬 加坡节点",
+          "🇺🇲 美国节点",
+          "🇲🇾 马来西亚",
+        ],
+    }
+  - {
+      name: "🐟 漏网之鱼",
+      type: select,
+      proxies:
+        [
+          "🚀 节点选择",
+          DIRECT,
+          "🇭🇰 香港节点",
+          "🇨🇳 台湾节点",
+          "🇯🇵 日本节点",
+          "🇸🇬 加坡节点",
+          "🇺🇲 美国节点",
+          "🇲🇾 马来西亚",
+        ],
+    }
+  - {
+      name: "🛑 广告拦截",
+      type: select,
+      proxies: [REJECT, "🚀 节点选择", DIRECT],
+    }
+  - {
+      name: "🇭🇰 香港节点",
+      type: url-test,
+      proxies:
+        [
+          "香港 01",
+          "香港 02",
+          "香港 03",
+          "香港 04",
+          "香港 05",
+          "香港 06",
+          "香港 07",
+          "香港 08",
+          "香港 09",
+          "香港 10",
+          "香港 11",
+          "香港 12",
+          "香港 13",
+          "香港 14",
+          "香港 15",
+          "香港 16",
+          "香港 17",
+          "香港 18",
+          "香港 19",
+          "香港 20",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "🇨🇳 台湾节点",
+      type: url-test,
+      proxies:
+        [
+          "台湾 01",
+          "台湾 02",
+          "台湾 03",
+          "台湾 04",
+          "台湾 05",
+          "台湾 06",
+          "台湾 07",
+          "台湾 08",
+          "台湾 09",
+          "台湾 10",
+          "SS-台湾 01",
+          "SS-台湾 02",
+          "SS-台湾 03",
+          "SS-台湾 04",
+          "SS-台湾 05",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "🇯🇵 日本节点",
+      type: url-test,
+      proxies:
+        [
+          "日本 01",
+          "日本 02",
+          "日本 03",
+          "日本 04",
+          "日本 05",
+          "日本 06",
+          "日本 07",
+          "日本 08",
+          "日本 09",
+          "日本 10",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "🇸🇬 加坡节点",
+      type: url-test,
+      proxies:
+        [
+          "新加坡 01",
+          "新加坡 02",
+          "新加坡 03",
+          "新加坡 04",
+          "新加坡 05",
+          "新加坡 06",
+          "新加坡 07",
+          "新加坡 08",
+          "新加坡 09",
+          "新加坡 10",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "🇺🇲 美国节点",
+      type: url-test,
+      proxies:
+        [
+          "美国 01",
+          "美国 02",
+          "美国 03",
+          "美国 04",
+          "美国 05",
+          "美国 06",
+          "美国 07",
+          "美国 08",
+          "美国 09",
+          "美国 10",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+  - {
+      name: "🇲🇾 马来西亚",
+      type: url-test,
+      proxies:
+        [
+          "马来西亚 01",
+          "马来西亚 02",
+          "马来西亚 03",
+          "马来西亚 04",
+          "马来西亚 05",
+        ],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300,
+    }
+
+rule-providers:
+  # Ruleset
+  ai:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/AI.yaml
+    path: ./Providers/Ruleset/ai.yaml
+
+  appletv:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/AppleTV.yaml
+    path: ./Providers/Ruleset/appletv.yaml
+
+  steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Steam.yaml
+    path: ./Providers/Ruleset/steam.yaml
+    interval: 86400
+
+  sony:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Sony.yaml
+    path: ./Providers/Ruleset/sony.yaml
+    interval: 86400
+
+  nintendo:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Nintendo.yaml
+    path: ./Providers/Ruleset/nintendo.yaml
+    interval: 86400
+
+  steam_cn:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/SteamCN.yaml
+    path: ./Providers/Ruleset/steam_cn.yaml
+    interval: 86400
+  
+  game_download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/GameDownload.yaml
+    path: ./Providers/Ruleset/game_download.yaml
+    interval: 86400
+
+  wechat:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Wechat.yaml
+    path: ./Providers/Ruleset/wechat.yaml
+
+  apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Apple.yaml
+    path: ./Providers/Ruleset/apple.yaml
+
+  microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Microsoft.yaml
+    path: ./Providers/Ruleset/microsoft.yaml
+    interval: 86400
+
+  onedrive:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/OneDrive.yaml
+    path: ./Providers/Ruleset/onedrive.yaml
+    interval: 86400
+
+  # Providers
+  proxy:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
+    path: ./Providers/proxy.yaml
+    interval: 86400
+
+  unban:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/UnBan.yaml
+    path: ./Providers/unban.yaml
+    interval: 86400
+
+  ban_ad:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanAD.yaml
+    path: ./Providers/ban_ad.yaml
+    interval: 86400
+
+  ban_program_ad:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/BanProgramAD.yaml
+    path: ./Providers/ban_program_ad.yaml
+    interval: 86400
+
+  local_area_network:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml
+    path: ./Providers/local_area_network:.yaml
+    interval: 86400
+
+  download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Download.yaml
+    path: ./Providers/download.yaml
+    interval: 86400
+
+  china_domain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaDomain.yaml
+    path: ./Providers/china_domain.yaml
+    interval: 86400
+
+  china_company:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ChinaCompanyIp.yaml
+    path: ./Providers/china_company.yaml
+    interval: 86400
+
+  chatgpt_chao:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chaoermeng/ACL4chao/refs/heads/main/Clash/Providers/ChatGPT.yaml
+    path: ./Providers/chatgpt_chao.yaml
+    interval: 86400
+
+  direct_chao:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chaoermeng/ACL4chao/refs/heads/main/Clash/Providers/Direct.yaml
+    path: ./Providers/direct_chao.yaml
+    interval: 86400
+
+  game_chao:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chaoermeng/ACL4chao/refs/heads/main/Clash/Providers/Game.yaml
+    path: ./Providers/game_chao.yaml
+    interval: 86400
+
+  proxy_chao:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chaoermeng/ACL4chao/refs/heads/main/Clash/Providers/Proxy.yaml
+    path: ./Providers/proxy_chao.yaml
+    interval: 86400
+
+# Summary: 
+# Ruleset: ai, appletv, steam, sony, nintendo, steam_cn, game_download, wechat, apple, microsoft, onedrive
+
+# Providers: proxy, unban, ban_ad, ban_program_ad, local_area_network, download, china_domain, china_company, chatgpt_chao, direct_chao, game_chao, proxy_chao
+
+rules:
+  # Providers
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - RULE-SET,ai,💬 ChatGPT
+  - RULE-SET,appletv,🍎 AppleTV
+  - RULE-SET,steam,🎮 游戏平台
+  - RULE-SET,sony,🎮 游戏平台
+  - RULE-SET,nintendo,🎮 游戏平台
+  - RULE-SET,steam_cn,DIRECT
+  - RULE-SET,game_download,DIRECT
+  - RULE-SET,wechat,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,microsoft,DIRECT
+  - RULE-SET,onedrive,DIRECT
+
+  # Ruleset
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,download,DIRECT
+  - RULE-SET,unban,DIRECT
+  - RULE-SET,ban_ad,REJECT
+  - RULE-SET,ban_program_ad,REJECT
+  - RULE-SET,local_area_network,DIRECT
+  - RULE-SET,china_domain,DIRECT
+  - RULE-SET,china_company,DIRECT
+  - RULE-SET,chatgpt_chao,💬 ChatGPT
+  - RULE-SET,direct_chao,DIRECT
+  - RULE-SET,game_chao,🎮 游戏平台
+  - RULE-SET,proxy_chao,🚀 节点选择
+  - MATCH,🐟 漏网之鱼

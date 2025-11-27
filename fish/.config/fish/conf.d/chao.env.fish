@@ -1,0 +1,91 @@
+if test (uname -s) = Darwin
+    # iCloud Path
+    set -gx ICLOUD "$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+
+    # jdk Flags
+    set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
+    set -gx JAVA_HOME /opt/homebrew/opt/openjdk
+
+    # Config Files
+    set -gx ENV "$HOME/.config/fish/conf.d/chao.env.fish"
+    set -gx CONFIG "$HOME/.config/fish/config.fish"
+    set -gx HOMEBREW_BUNDLE_FILE "$HOME/.config/brew/Brewfile"
+
+    # Adapt Dynamic Terminal Theme
+    if test "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = Dark
+        osascript -e 'tell application "Terminal"
+            set current settings of tabs of windows to settings set "Transparent Dark" -- Theme name
+        end tell'
+    end
+end
+
+if test (uname -s) = Linux
+    set -gx HOMEBREW_BUNDLE_FILE "$HOME/.config/brew/Brewfile_Linux"
+    set -gx XDG_DATA_DIRS "/home/chao/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
+    alias tailscale="tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
+end
+
+# Default Editor
+if type -q nvim
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+else
+    set -gx EDITOR vi
+    set -gx VISUAL vi
+end
+
+# Proxy
+set -gx http_proxy "http://127.0.0.1:6152"
+set -gx https_proxy "http://127.0.0.1:6152"
+
+# XDG Variables
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
+
+# bun
+set -gx BUN_INSTALL_BIN "$HOME/.local/bin"
+set -gx BUN_INSTALL_GLOBAL_DIR "$XDG_DATA_HOME/bun"
+set -gx BUN_INSTALL_CACHE_DIR "$XDG_CACHE_HOME/bun"
+function bun
+    if test (count $argv) -gt 0 -a "$argv[1]" = search
+        set -e argv[1]
+        npm search $argv
+    else
+        command bun $argv
+    end
+end
+
+# API
+set -gx OPENAI_API_KEY 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
+
+set -gx GITHUB_PAT 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
+
+# Campus Network
+set -gx CUIT_USERID 2023083061
+set -gx CUIT_PASSWORD Cuit_456602847
+set -gx CUIT_SERVICE 电信
+
+# Docker
+set -gx DOCKER_COMPOSE "$XDG_DATA_HOME/docker-compose"
+set -gx DOCKERFILE_PATH "$XDG_DATA_HOME/dockerfiles"
+set -gx DOCKER_VOLUMES "$XDG_DATA_HOME/docker"
+
+# Homebrew
+set -gx WHALEBREW_CONFIG_DIR "$HOME/.config/whalebrew"
+set -gx WHALEBREW_INSTALL_PATH /usr/local/bin
+set -gx HOMEBREW_API_AUTO_UPDATE_SECS 600
+set -gx HOMEBREW_AUTO_UPDATE_SECS 3600
+set -gx HOMEBREW_BAT 1
+set -gx HOMEBREW_BAT_CONFIG_PATH "$XDG_CONFIG_HOME/bat/config"
+set -gx HOMEBREW_BAT_THEME "Solarized (dark)"
+set -gx HOMEBREW_CACHE "$XDG_CACHE_HOME/Homebrew"
+set -gx HOMEBREW_CLEANUP_MAX_AGE_DAYS 1
+set -gx HOMEBREW_DISPLAY_INSTALL_TIMES 1
+set -gx HOMEBREW_NO_INSTALL_CLEAN ""
+set -gx HOMEBREW_NO_ENV_HINTS ""
+set -gx HOMEBREW_UPGRADE_GREEDY 1
+
+# man
+set -gx MANPAGER "sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"

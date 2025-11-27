@@ -1,0 +1,9 @@
+# Dev dependencies
+
+bun.lock
+commitlint.config.js
+lefthook.yml
+package.json
+
+# Ignored files
+fish_variables

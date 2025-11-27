@@ -1,0 +1,22 @@
+[Unit]
+Description=YACD Web Interface for Mihomo
+After=network.target
+
+[Service]
+Restart=always
+
+[Container]
+Image=docker.io/haishanh/yacd:latest
+ContainerName=yacd
+
+PublishPort=1234:80
+
+Volume=/etc/localtime:/etc/localtime:ro
+
+AddHost=host.docker.internal:host-gateway
+
+# 加入指定网络
+# Network=mihomo_network
+
+[Install]
+WantedBy=default.target

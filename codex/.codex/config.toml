@@ -1,0 +1,21 @@
+[mcp_servers.github]
+command = "mcp-remote"
+args = ["https://api.githubcopilot.com/mcp/", "--header", "Authorization: 'Bearer ${GITHUB_PAT}'"]
+
+[mcp_servers.vercel]
+command = "mcp-remote"
+args = ["https://mcp.vercel.com"]
+
+# [mcp_servers.figma]
+# command = "mcp-remote"
+# args = ["figma-developer-mcp", "--figma-api-key=YOUR-KEY", "--stdio"]
+
+[mcp_servers.chrome-devtools]
+command = "chrome-devtools-mcp"
+
+[mcp_servers.homebrew]
+command = "brew"
+args = ["mcp-server"]
+
+[projects."/Users/chao"]
+trust_level = "trusted"
