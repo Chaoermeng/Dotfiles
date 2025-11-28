@@ -27,7 +27,7 @@ rm -rf $HOME/.config/bat
 stow -R bat
 
 rm -rf $HOME/.config/brew
-stow -R brew
+stow -R homebrew
 
 rm -rf $HOME/.config/bun
 rm -rf $XDG_DATA_HOME/bun
