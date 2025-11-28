@@ -12,8 +12,8 @@ skip-auth-prefixes:
   - 100.64.0.0/10
   - ::1/128
 mode: rule
-log-level: info
-ipv6: true
+log-level: warning
+ipv6: false
 mixed-port: 6152
 find-process-mode: strict
 external-controller: '0.0.0.0:7890'
@@ -60,8 +60,8 @@ dns:
   listen: 0.0.0.0:1053
   ipv6: true
   default-nameserver:
-    - 223.5.5.5
-    - 100.100.100.100
+    - 1.1.1.1
+    - 8.8.8.8
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
@@ -70,10 +70,10 @@ dns:
     - '+.argotunnel.com'
   nameserver-policy:
     '+.arpa': '10.0.0.1'
-    '+.taileee60e.ts.net': '100.100.100.100'
-  #   'rule-set:cn':
-  #   - https://doh.pub/dns-query
-  #   - https://dns.alidns.com/dns-query
+    '+.taileee60e.ts.net': '100.100.100.100' 
+    # 'rule-set:cn':
+        # - https://doh.pub/dns-query
+        # - https://dns.alidns.com/dns-query
   nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
