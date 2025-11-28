@@ -54,5 +54,8 @@ stow -R posting
 rm -rf $HOME/.ssh
 stow -R ssh
 
+rm -rf $HOME/.config/tailscale
+stow -R tailscale
+
 rm -rf $HOME/.config/whalebrew
 stow -R whalebrew
