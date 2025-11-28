@@ -31,12 +31,17 @@ stow -R homebrew
 
 rm -rf $HOME/.config/bun
 rm -rf $XDG_DATA_HOME/bun
+mkdir -p $HOME/.local/share/bun
 stow -R bun
 
 rm -rf $HOME/.codex
 stow -R codex
 
 rm -rf $HOME/.config/fish
+mkdir $HOME/.config/fish/completions
+mkdir $HOME/.config/fish/conf.d
+mkdir $HOME/.config/fish/functions
+mkdir $HOME/.config/fish/themes
 stow -R fish
 
 rm -rf $HOME/.config/git

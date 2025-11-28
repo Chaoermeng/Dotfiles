@@ -1,5 +1,4 @@
 # Dev dependencies
-
 bun.lock
 commitlint.config.js
 lefthook.yml
