@@ -4,7 +4,6 @@
   # signingkey =
   useConfigOnly = true
 [core]
-  editor = code --wait
   autocrlf = input
   ignorecase = true
   pager = less -F -X
