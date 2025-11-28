@@ -38,6 +38,7 @@ rm -rf $HOME/.codex
 stow -R codex
 
 rm -rf $HOME/.config/fish
+mkdir $HOME/.config/fish
 mkdir $HOME/.config/fish/completions
 mkdir $HOME/.config/fish/conf.d
 mkdir $HOME/.config/fish/functions
