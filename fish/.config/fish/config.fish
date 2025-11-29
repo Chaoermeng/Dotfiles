@@ -24,7 +24,7 @@ if test (uname -s) = Linux
     abbr psg /usr/lib/systemd/system-generators/podman-system-generator
     abbr sc systemctl
     abbr scu "systemctl --user"
-    alias tailscale "tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
+    # alias tailscale "tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
 end
 
 if status is-interactive

@@ -11,15 +11,15 @@ if test (uname -s) = Linux
     rm -rf $HOME/.config/mihomo
     stow -R mihomo
 
-    rm -rf /etc/nginx
-    stow -R nginx -t /
+    sudo rm -rf /etc/nginx
+    sudo stow -R nginx -t /
 
-    rm -rf /etc/samba
-    stow -R samba -t /
+    sudo rm -rf /etc/samba
+    sudo stow -R samba -t /
 
-    stow -R quadlet@system -t /
+    sudo stow -R quadlet@system -t /
     stow -R quadlet@user
-    stow -R systemd@system -t /
+    sudo stow -R systemd@system -t /
     stow -R systemd@user
 end
 

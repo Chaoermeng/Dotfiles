@@ -22,7 +22,6 @@ end
 if test (uname -s) = Linux
     set -gx HOMEBREW_BUNDLE_FILE "$HOME/.config/brew/Brewfile_Linux"
     set -gx XDG_DATA_DIRS "/home/chao/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
-    alias tailscale="tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
 end
 
 # Default Editor
