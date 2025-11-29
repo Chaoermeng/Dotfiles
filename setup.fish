@@ -58,6 +58,9 @@ rm -rf $HOME/.config/posting
 stow -R posting
 
 rm -rf $HOME/.ssh
+mkdir $HOME/.ssh
+touch $HOME/.ssh/authorized_keys
+touch $HOME/.ssh/known_hosts
 stow -R ssh
 
 rm -rf $HOME/.config/tailscale
