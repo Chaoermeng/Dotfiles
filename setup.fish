@@ -12,14 +12,14 @@ if test (uname -s) = Linux
     stow -R mihomo
 
     sudo rm -rf /etc/nginx
-    sudo stow -R nginx -t /
+    sudo /home/linuxbrew/.linuxbrew/bin/stow -R nginx -t /
 
     sudo rm -rf /etc/samba
-    sudo stow -R samba -t /
+    sudo /home/linuxbrew/.linuxbrew/bin/stow -R samba -t /
 
-    sudo stow -R quadlet@system -t /
+    sudo /home/linuxbrew/.linuxbrew/bin/stow -R quadlet@system -t /
     stow -R quadlet@user
-    sudo stow -R systemd@system -t /
+    sudo /home/linuxbrew/.linuxbrew/bin/stow -R systemd@system -t /
     stow -R systemd@user
 end
 
@@ -35,6 +35,7 @@ mkdir -p $HOME/.local/share/bun
 stow -R bun
 
 rm -rf $HOME/.codex
+mkdir $HOME/.codex
 stow -R codex
 
 rm -rf $HOME/.config/fish
