@@ -7,16 +7,9 @@ if test (uname -s) = Darwin
     set -gx JAVA_HOME /opt/homebrew/opt/openjdk
 
     # Config Files
-    set -gx ENV "$HOME/.config/fish/conf.d/chao.env.fish"
+    set -gx RC "$HOME/.config/fish/conf.d/chao.env.fish"
     set -gx CONFIG "$HOME/.config/fish/config.fish"
-    set -gx HOMEBREW_BUNDLE_FILE "$HOME/.config/brew/Brewfile"
-
-    # Adapt Dynamic Terminal Theme
-    if test "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = Dark
-        osascript -e 'tell application "Terminal"
-            set current settings of tabs of windows to settings set "Transparent Dark" -- Theme name
-        end tell'
-    end
+    set -gx HOMEBREW_BUNDLE_FILE "$HOME/.config/homebrew/Brewfile"
 end
 
 if test (uname -s) = Linux
@@ -56,16 +49,6 @@ function bun
     end
 end
 
-# API
-set -gx OPENAI_API_KEY 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
-
-set -gx GITHUB_PAT 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
-
-# Campus Network
-set -gx CUIT_USERID 2023083061
-set -gx CUIT_PASSWORD Cuit_456602847
-set -gx CUIT_SERVICE 电信
-
 # Docker
 set -gx DOCKER_COMPOSE "$XDG_DATA_HOME/docker-compose"
 set -gx DOCKERFILE_PATH "$XDG_DATA_HOME/dockerfiles"
@@ -85,6 +68,7 @@ set -gx HOMEBREW_DISPLAY_INSTALL_TIMES 1
 set -gx HOMEBREW_NO_INSTALL_CLEAN ""
 set -gx HOMEBREW_NO_ENV_HINTS ""
 set -gx HOMEBREW_UPGRADE_GREEDY 1
+set -gx WHALEBREW_INSTALL_PATH $HOME/.local/bin
 
 # man
 set -gx MANPAGER "sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"

@@ -1,6 +1,7 @@
 if test (uname -s) = Darwin
     # Homebrew
     /opt/homebrew/bin/brew shellenv | source
+    /opt/homebrew/bin/whalebrew completion fish | source
 
     # Orbstack
     source ~/.orbstack/shell/init2.fish 2>/dev/null || :
@@ -9,15 +10,26 @@ if test (uname -s) = Darwin
     abbr keychain-add "/usr/bin/ssh-add --apple-use-keychain"
 
     # Abbreviation
-    abbr x86 "arch -arm64 env ZDOTDIR=$HOME/.zsh@x86 zsh"
+    abbr x86 "arch -arm64 env ZDOTDIR='$HOME/.zsh@x86' zsh"
     abbr xcode "open -a Xcode"
+
+    # Adapt Dynamic Terminal Theme
+    if test "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = Dark
+        osascript -e 'tell application "Terminal"
+            set current settings of tabs of windows to settings set "Transparent Dark" -- Theme name
+        end tell'
+    else
+        osascript -e 'tell application "Terminal"
+            set current settings of tabs of windows to settings set "Transparent Light" -- Theme name
+        end tell'
+    end
 end
 
 if test (uname -s) = Linux
     # Linuxbrew
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+    /home/linuxbrew/.linuxbrew/bin/brew shellenv fish | source
 
-    # SSH_Agent
+    # SSH-Agent
     eval "$(ssh-agent -c 2>/dev/null)" >/dev/null
 
     # Abbreviation
@@ -37,9 +49,11 @@ end
 abbr apy "source ./.venv/bin/activate.fish"
 abbr activate "source .venv/bin/activate.fish"
 abbr dpy deactivate
+abbr f fastfetch
 abbr ipy "uv init --no-readme"
 abbr jnote "jupyter notebook"
 abbr jlab "jupyter lab"
+abbr n nvim
 abbr s source
 abbr td "tailscale down"
 abbr tp "tailscale ping"
