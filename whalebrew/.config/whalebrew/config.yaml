@@ -1,5 +1,0 @@
-registries:
-- dockerHub:
-    owner: whalebrew
-- dockerHub:
-    owner: my-org

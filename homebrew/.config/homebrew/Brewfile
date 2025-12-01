@@ -20,14 +20,13 @@ brew "lazygit"
 brew "lefthook"
 brew "openjdk"
 brew "openssh"
-# brew "p7zip"
 brew "pandoc"
 brew "posting"
 brew "rust"
 brew "stow"
 # brew "tmux"
 brew "uv"
-# brew "wget"
+brew "whalebrew"
 brew "yazi"
 cask "aldente"
 cask "betterdisplay"
@@ -41,27 +40,19 @@ cask "font-sf-mono"
 cask "font-sf-mono-nerd-font-ligaturized"
 cask "font-sf-pro"
 cask "jordanbaird-ice"
-# cask "iina"
 # cask "mactex-no-gui"
-cask "microsoft-auto-update"
-cask "microsoft-excel"
-cask "microsoft-powerpoint"
-cask "microsoft-word"
-# cask "moonlight"
 # cask "motrix"
 cask "notchnook"
 cask "notion"
-cask "onedrive"
 cask "orbstack"
 cask "stats"
 cask "surge"
 cask "tailscale-app"
-# cask "termius"
 # cask "tor-browser"
-# cask "visual-studio-code"
 cask "wechat"
-cask "windows-app"
 cask "qq"
+
+# Mas
 mas "AdGuard for Safari", id: 1440147259
 mas "Developer", id: 640199958
 mas "Immersive Translate", id: 6447957425
@@ -76,5 +67,11 @@ mas "Tampermonkey", id: 6738342400
 mas "TestFlight", id: 899247664
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
+
+# Microsoft
+mas "Windows App", id: 1295203466
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
 
 brew "waydabber/betterdisplay/betterdisplaycli"
