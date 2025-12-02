@@ -1,5 +1,10 @@
+# ==== tap ====
+
 tap "oven-sh/bun"
 tap "waydabber/betterdisplay"
+
+# ==== formula ====
+
 brew "bat"
 brew "bun"
 brew "neovim"
@@ -22,19 +27,24 @@ brew "openjdk"
 brew "openssh"
 brew "pandoc"
 brew "posting"
+brew "ripgrep"
 brew "rust"
 brew "stow"
-# brew "tmux"
 brew "uv"
 brew "whalebrew"
 brew "yazi"
+brew "zellij"
+brew "zoxide"
+
+# ==== cask ====
+
 cask "aldente"
 cask "betterdisplay"
 cask "bettertouchtool"
 cask "chatgpt"
 cask "cleanmymac"
+cask "codex"
 cask "downie"
-# cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-compact"
 cask "font-sf-mono"
 cask "font-sf-mono-nerd-font-ligaturized"
@@ -48,11 +58,11 @@ cask "orbstack"
 cask "stats"
 cask "surge"
 cask "tailscale-app"
-# cask "tor-browser"
 cask "wechat"
 cask "qq"
 
-# Mas
+# ==== Mas ====
+
 mas "AdGuard for Safari", id: 1440147259
 mas "Developer", id: 640199958
 mas "Immersive Translate", id: 6447957425
@@ -68,7 +78,8 @@ mas "TestFlight", id: 899247664
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
 
-# Microsoft
+# ==== Microsoft ====
+
 mas "Windows App", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "Microsoft Excel", id: 462058435
