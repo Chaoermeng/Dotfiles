@@ -17,7 +17,9 @@ if test (uname -s) = Linux
     set -gx XDG_DATA_DIRS "/home/chao/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
 end
 
-# Default Editor
+set -g fish_key_bindings fish_vi_key_bindings
+
+# Editor
 if type -q nvim
     set -gx EDITOR nvim
     set -gx VISUAL nvim
@@ -25,6 +27,12 @@ else
     set -gx EDITOR vi
     set -gx VISUAL vi
 end
+
+# Explorer
+set -gx EXPLORER y
+
+# Pager
+set -gx PAGER less
 
 # Proxy
 set -gx http_proxy "http://127.0.0.1:6152"
@@ -36,7 +44,7 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
-# bun
+# Bun
 set -gx BUN_INSTALL_BIN "$HOME/.local/bin"
 set -gx BUN_INSTALL_GLOBAL_DIR "$XDG_DATA_HOME/bun"
 set -gx BUN_INSTALL_CACHE_DIR "$XDG_CACHE_HOME/bun"
@@ -70,5 +78,10 @@ set -gx HOMEBREW_NO_ENV_HINTS ""
 set -gx HOMEBREW_UPGRADE_GREEDY 1
 set -gx WHALEBREW_INSTALL_PATH $HOME/.local/bin
 
-# man
+# Man
 set -gx MANPAGER "sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
+# Zoxide
+set -gx _ZO_DATA_DIR $XDG_DATA_HOME
+# set -gx _ZO_FZF_OPTS
+set -gx _ZO_RESOLVE_SYMLINKS 1
