@@ -34,10 +34,6 @@ rm -rf $XDG_DATA_HOME/bun
 mkdir -p $HOME/.local/share/bun
 stow -R bun
 
-rm -rf $HOME/.codex
-mkdir $HOME/.codex
-stow -R codex
-
 rm -rf $HOME/.config/fish
 mkdir $HOME/.config/fish
 mkdir $HOME/.config/fish/completions
