@@ -105,3 +105,16 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+function tsnap
+    set -l tmp (mktemp -t "nvpipe.XXXXXX")
+    if test -z "$tmp"
+        echo "mktemp failed" >&2
+        return 1
+    end
+    cat >"$tmp"
+    nvim $argv "$tmp"
+    set -l code $status
+    rm -f -- "$tmp"
+    return $code
+end

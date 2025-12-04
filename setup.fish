@@ -9,6 +9,7 @@ end
 
 if test (uname -s) = Linux
     rm -rf $HOME/.config/mihomo
+    mkdir -p $HOME/.config/mihomo
     stow -R mihomo
 
     sudo rm -rf /etc/nginx
