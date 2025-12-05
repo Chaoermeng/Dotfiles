@@ -106,15 +106,21 @@ function y
     rm -f -- "$tmp"
 end
 
-function tsnap
-    set -l tmp (mktemp -t "nvpipe.XXXXXX")
-    if test -z "$tmp"
-        echo "mktemp failed" >&2
-        return 1
+function clisnap --description 'Snapshot CLI output to clipboard via CodeSnap'
+    set tmp (mktemp -t "clisnap.XXXXXX")
+    cat >$tmp
+    if test -s $tmp
+        codesnap --from-file $tmp --output clipboard --silent
+        set -l exit_code $status
+        rm -f $tmp
+
+        if test $exit_code -eq 0
+            echo "CliSnap saved to clipboard successfully."
+        else
+            echo "CliSnap failed with exit code $exit_code" >&2
+        end
+    else
+        rm -f -- "$tmp"
+        echo "No input received, nothing to snapshot." >&2
     end
-    cat >"$tmp"
-    nvim $argv "$tmp"
-    set -l code $status
-    rm -f -- "$tmp"
-    return $code
 end

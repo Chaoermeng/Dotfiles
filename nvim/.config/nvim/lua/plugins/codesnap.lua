@@ -1,7 +1,7 @@
 return {
   {
     "mistricky/codesnap.nvim",
-    tag = "v2.0.0",
+    tag = "v2.0.0-beta.17",
     config = function()
       require("codesnap").setup({
         show_line_number = true,
