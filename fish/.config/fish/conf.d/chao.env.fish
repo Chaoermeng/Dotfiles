@@ -62,6 +62,10 @@ set -gx DOCKER_COMPOSE "$XDG_DATA_HOME/docker-compose"
 set -gx DOCKERFILE_PATH "$XDG_DATA_HOME/dockerfiles"
 set -gx DOCKER_VOLUMES "$XDG_DATA_HOME/docker"
 
+# fzf
+# set -gx FZF_DEFAULT_COMMAND "fd --type f"
+set -gx FZF_DEFAULT_OPTS "--exact --style full"
+
 # Homebrew
 set -gx WHALEBREW_CONFIG_DIR "$HOME/.config/whalebrew"
 set -gx WHALEBREW_INSTALL_PATH /usr/local/bin

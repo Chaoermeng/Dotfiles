@@ -28,7 +28,7 @@ if test (uname -s) = Darwin
 end
 
 if test (uname -s) = Linux
-    # Linuxbrew
+    # Homebrew
     /home/linuxbrew/.linuxbrew/bin/brew shellenv fish | source
     /home/linuxbrew/.linuxbrew/bin/whalebrew completion fish | source
 
@@ -39,7 +39,7 @@ if test (uname -s) = Linux
     abbr psg /usr/lib/systemd/system-generators/podman-system-generator
     abbr sc systemctl
     abbr scu "systemctl --user"
-    # alias tailscale "tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
+    alias tailscale "tailscale --socket $XDG_RUNTIME_DIR/tailscale/tailscaled.sock"
 
     # Functions
     function sys_color_scheme_is_dark
@@ -71,6 +71,7 @@ if status is-interactive
     end
 end
 
+fzf --fish | source
 zoxide init --cmd cd fish | source
 
 # Key Binding
@@ -86,6 +87,7 @@ abbr apy "source ./.venv/bin/activate.fish"
 abbr activate "source .venv/bin/activate.fish"
 abbr dpy deactivate
 abbr f fastfetch
+abbr fzfp "fzf --style full --preview 'fzf-preview.sh {}'"
 abbr ipy "uv init --no-readme"
 abbr jnote "jupyter notebook"
 abbr jlab "jupyter lab"
