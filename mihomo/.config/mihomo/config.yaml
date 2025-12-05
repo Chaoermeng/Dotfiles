@@ -186,6 +186,32 @@ proxy-providers:
       lazy: true
       expected-status: 204
 
+  AR:
+    type: http
+    url: https://sub.er-meng.com/backend/download/collection/AR?target=ClashMeta
+    path: ./proxy-providers/AR
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+
+  TR:
+    type: http
+    url: https://sub.er-meng.com/backend/download/collection/TR?target=ClashMeta
+    path: ./proxy-providers/TR
+    interval: 3600
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      timeout: 5000
+      lazy: true
+      expected-status: 204
+
 proxy-groups:
   - name: "🚀 Select"
     type: select
@@ -197,6 +223,8 @@ proxy-groups:
       - "🇸🇬 SG"
       - "🇺🇲 US"
       - "🇲🇾 MY"
+      - "🇦🇷 AR"
+      - "🇹🇷 TR"
   - name: "♻️ Auto"
     type: url-test
     use:
@@ -213,6 +241,8 @@ proxy-groups:
       - "🇸🇬 SG"
       - "🇺🇲 US"
       - "🇲🇾 MY"
+      - "🇦🇷 AR"
+      - "🇹🇷 TR"
   - name: "🍎 AppleTV"
     type: select
     proxies:
@@ -225,6 +255,8 @@ proxy-groups:
       - "🇸🇬 SG"
       - "🇺🇲 US"
       - "🇲🇾 MY"
+      - "🇦🇷 AR"
+      - "🇹🇷 TR"
   - name: "🎮 Game"
     type: select
     proxies:
@@ -237,6 +269,8 @@ proxy-groups:
       - "🇸🇬 SG"
       - "🇺🇲 US"
       - "🇲🇾 MY"
+      - "🇦🇷 AR"
+      - "🇹🇷 TR"
   - name: "🐟 Final"
     type: select
     proxies:
@@ -249,6 +283,8 @@ proxy-groups:
       - "🇸🇬 SG"
       - "🇺🇲 US"
       - "🇲🇾 MY"
+      - "🇦🇷 AR"
+      - "🇹🇷 TR"
   - name: "🛑 AD"
     type: select
     proxies:
@@ -290,6 +326,18 @@ proxy-groups:
     type: url-test
     use:
       - MY
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+  - name: "🇦🇷 AR"
+    type: url-test
+    use:
+      - AR
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+  - name: "🇹🇷 TR"
+    type: url-test
+    use:
+      - TR
     url: "https://www.gstatic.com/generate_204"
     interval: 300
 
