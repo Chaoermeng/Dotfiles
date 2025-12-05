@@ -67,3 +67,6 @@ stow -R ssh
 
 rm -rf $HOME/.config/tailscale
 stow -R tailscale
+
+rm -rf $HOME/.config/zellij
+stow -R zellij

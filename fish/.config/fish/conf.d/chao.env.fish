@@ -17,6 +17,8 @@ if test (uname -s) = Linux
     set -gx XDG_DATA_DIRS "/home/chao/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
 end
 
+# fish
+set -U fish_greeting
 set -g fish_key_bindings fish_vi_key_bindings
 
 # Editor
@@ -78,12 +80,16 @@ set -gx HOMEBREW_CACHE "$XDG_CACHE_HOME/Homebrew"
 set -gx HOMEBREW_CLEANUP_MAX_AGE_DAYS 1
 set -gx HOMEBREW_DISPLAY_INSTALL_TIMES 1
 set -gx HOMEBREW_NO_INSTALL_CLEAN ""
-set -gx HOMEBREW_NO_ENV_HINTS ""
+set -gx HOMEBREW_NO_ENV_HINTS 1
 set -gx HOMEBREW_UPGRADE_GREEDY 1
 set -gx WHALEBREW_INSTALL_PATH $HOME/.local/bin
 
 # Man
 set -gx MANPAGER "sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+
+# Zellij
+set -gx ZELLIJ_AUTO_EXIT 1
+set -gx ZELLIJ_CONFIG_DIR $XDG_CONFIG_HOME/zellij
 
 # Zoxide
 set -gx _ZO_DATA_DIR $XDG_DATA_HOME

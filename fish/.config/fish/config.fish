@@ -66,9 +66,10 @@ if test (uname -s) = Linux
 end
 
 if status is-interactive
-    function fish_greeting
-        #        fastfetch
-    end
+    eval (zellij setup --generate-auto-start fish | string collect)
+    # function fish_greeting
+    #     echo "Welcome to $(uname -s)!"
+    # end
 end
 
 fzf --fish | source
