@@ -1,10 +1,14 @@
 if test (uname -s) = Darwin
     find $HOME/Dotfiles -name ".DS_Store" -type f -delete
+    find $HOME/.config -name ".DS_Store" -type f -delete
     rm -f $HOME/.zshrc
     rm -f $HOME/.zprofile
     rm -f $HOME/.zshenv
     stow -R zsh
     stow -R zsh@x86
+
+    rm -rf $HOME/.config/codesnap
+    stow -R codesnap
 end
 
 if test (uname -s) = Linux
