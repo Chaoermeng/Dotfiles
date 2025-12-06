@@ -31,6 +31,9 @@ end
 rm -rf $HOME/.config/bat
 stow -R bat
 
+rm -rf $HOME/.config/bottom
+stow -R bottom
+
 rm -rf $HOME/.config/brew
 stow -R homebrew
 
@@ -49,9 +52,6 @@ stow -R fish
 
 rm -rf $HOME/.config/git
 stow -R git
-
-rm -rf $HOME/.config/htop
-stow -R htop
 
 rm -rf $HOME/.config/nvim
 stow -R nvim
